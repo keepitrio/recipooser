@@ -1,3 +1,4 @@
 class RecipeFlavor < ActiveRecord::Base
-  # Remember to create a migration!
+	belongs_to :recipe
+	belongs_to :flavor
 end
