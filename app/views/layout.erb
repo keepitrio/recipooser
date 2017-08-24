@@ -20,6 +20,22 @@
   <title></title>
 </head>
 <body>
+  <header>
+    <a class="logo" href="/">Recipooser</a>
+    <% if logged_in? %>
+      <div class="menu">
+        <p><a href="/logout">logout</a></p>
+        <p>|</p>
+        <p><a href="/users/<%= current_user.id %>"><%= current_user.username %></a></p>
+      </div>
+    <% else %>
+      <div class="menu">
+        <p><a href="/login">login</a></p>
+        <p>|</p>
+        <p><a href="/register">register</a></p>
+      </div>
+    <% end %>
+  </header>
   <%= yield %>
 </body>
 </html>
