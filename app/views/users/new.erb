@@ -1,0 +1,14 @@
+<form method="post" action="/register" class="form">
+	<label>Email: </label>
+	<input type="email" name="user[email]">
+
+	<label>Username: </label>
+	<input type="text" name="user[username]">
+	
+	<label>Password: </label>
+	<input type="password" name="user[password]">
+
+	<input type="submit" value="Register user">
+	
+	<%= erb :'/_errors', locals: {errors: @errors} %>
+</form>

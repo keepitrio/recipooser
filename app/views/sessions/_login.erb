@@ -1,0 +1,11 @@
+<form method="post" action="/login" class="form">
+	<label>Email: </label>
+	<input type="email" name="user[email]">
+
+	<label>Password: </label>
+	<input type="password" name="user[password]">
+
+	<input type="submit" value="login">
+	
+	<%= erb :'/_errors', locals: {errors: @errors} %>
+</form>
