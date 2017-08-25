@@ -1,35 +1,41 @@
-body {
+
+
+.container {
+	display: flex;
+	justify-content: center;
 }
 
-.logo {
-	margin-left: 10px;
+.item {
+	align-self: center;
+}
+
+.logo a {
 	font-size: 3em;
+	color: #F1A66A;
+}
+
+.logo a:hover {
+	color: #E6C79C;
+	text-decoration: none;
 }
 
 .menu p {
 	display: inline;
-	float: right;
-	padding: 2px;
 }
 
 .menu {
 	padding-right: 10px;
+	margin-left: 10px;
+	color: #F1A66A;
 }
 
-.form {
-	margin-top: 10px;
-	margin-left: 20px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 5px;
-	width: 40%;
-	border: 1px solid black;
+.menu a {
+	color: #A0B2A6;
 }
 
-.form input {
-	display: block;
-	margin: 5px;
-	width: 80%;
+.menu a:hover {
+	color: #E6C79C;
+	text-decoration: none;
 }
 
 .container {
@@ -53,6 +59,87 @@ a:hover {
 	text-decoration: none;
 }
 
-#search-form {
+#search-form, .form {
 	width: 100%;
+}
+
+#search-form, .form {
+	width:70%;
+  border: 1px solid white;
+  margin: 20px auto 0;
+  padding: 1em;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  text-align: center;
+}
+
+#search-form input[type=text] {
+    text-align:center;
+    display: block;
+    margin: 0 auto 1em auto;
+    width: 90%;  /*280px;*/
+    border: 1px solid #818181;
+  /*  -moz-border-radius: 1px;
+    -webkit-border-radius: 1px; */
+    padding: 5px;
+}
+
+#search-form input[type=text]:focus {
+	outline: none;
+	border: 3px solid #555;
+}
+
+.search-bar {
+	width: 80%;
+}
+
+#search-form[type=submit] {
+    border: none;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background: #cfdeff;
+    color: black;
+    box-shadow: 0 1px 0 white;
+    -moz-box-shadow: 0 1px 0 white;
+    -webkit-box-shadow: 0 1px 0 white;
+}
+
+.button {
+  background-color: #F1A66A;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button-jr {
+	background-color: #F1A66A;
+	border: none;
+	color: white;
+	padding: 5px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+a:hover{
+	text-decoration: none;
+}
+
+.tag {
+	color: #A0B2A6;
+}
+
+.form input {
+	display: inline-block;
+	margin: 5px;
 }
