@@ -1,16 +1,8 @@
-post '/recipes/search' do
-	params[:searchword]
-
+get '/recipes/search' do
+	url = "http://api.yummly.com/v1/api/recipes"
+	app_id = ENV['RECIPE_API_APP_ID']
+	app_key = ENV['RECIPE_API_APP_KEY']
+	q = params[:searchwords].split(",")
+	@recipes = HTTParty.get(url, { query: { _app_id: app_id, _app_key: app_key, q: q } })
+	p @recipes
 end
-
-# ------------------------------
-# TO DELETE
-# ------------------------------
-# DO NOT INCLUDE THE FOLLOWING IN YOUR CODE: 
-# http://api.yummly.com/v1/api/recipes?_app_id=38363d9d&_app_key=7038dcc0fec8f2e7606b0161a3ec953e&q=onion+soup
-
-# net uri
-# httparty
-
-# how to make an .env file and make sure it's ignored
-# how to 
