@@ -4,5 +4,12 @@ get '/recipes/search' do
 	app_key = ENV['RECIPE_API_APP_KEY']
 	q = params[:searchwords].split(", ")
 	@recipes = HTTParty.get(url, { query: { _app_id: app_id, _app_key: app_key, q: q } })
-	p @recipes[1]
+	@image_by_size = @recipes["matches"].sample["imageUrlsBySize"]["90"]
+	@ingredients = @recipes["matches"].sample["ingredients"]
+	@recipe_name = @recipes["matches"].sample["recipeName"]
+	@minutes = @recipes["matches"].sample["totalTimeInSeconds"]
+	@flavors_hash = @recipes["matches"].sample["flavors"]
+	@lmgtfy = "http://lmgtfy.com/?q=" + @recipe_name.split(" ").join("+") + "+recipe"
+	erb :'/recipes/show'
 end
+

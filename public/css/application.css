@@ -1,3 +1,10 @@
+.recipe-item a {
+	color: #A0B2A6;
+}
+
+.recipe-item a:hover {
+	color: #E6C79C;
+}
 
 
 .container {
@@ -143,3 +150,24 @@ a:hover{
 	display: inline-block;
 	margin: 5px;
 }
+
+#recipe-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.recipe-item {
+	display: inline-block;
+	align-self: center;
+}
+
+.recipe-item h4, ul {
+	display: inline-block;
+}
+
+.recipe-item h4 {
+	float: left;
+}
+
+

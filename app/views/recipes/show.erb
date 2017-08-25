@@ -1,0 +1,28 @@
+<div id="recipe-container">
+	<h3 class="recipe-item"><%= @recipe_name %></h3>
+	<% if @minutes %>
+	<p class="recipe-item">Cooking time: <%= @minutes/60 %> minutes</p>
+	<% end %>
+
+	<div class="recipe-item recipe-column">
+		<h4>Ingredients:</h4>
+			<ul>
+				<% @ingredients.each do |ingredient| %>
+				<li><%= ingredient %></li>
+				<% end %>
+			</ul>
+	</div>
+
+	<div class="recipe-item recipe-column">
+		<% if @flavors %>
+		<h4>Flavors: </h4>
+			<ul>
+					<% @flavors_hash.each do |flavor| %>
+					<li><%= flavor[0] %>: <%= flavor[1].round(2) %></li>
+					<% end %>
+			</ul>
+		<% end %>
+	</div>
+
+	<div class="recipe-item recipe-column"><a href="<%= @lmgtfy %>">Need directions? Click here</a></div>
+</div>
