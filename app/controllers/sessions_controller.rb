@@ -1,5 +1,6 @@
 
 get '/login' do
+	logout
 	erb :'/sessions/_login'
 end
 

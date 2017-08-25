@@ -1,0 +1,18 @@
+<h3><%= @user.username %>'s recipe books</h3>
+
+<% if @user.recipe_books.length > 0 %>
+	<ul>
+		<% @user.recipe_books.each do |recipe_book| %>
+		<li><a href="#"><%= recipe_book.name %></a></li>
+		<% end %>
+	</ul>
+	<% if logged_in? && current_user.id == @user.id %>
+		<p><a href="/recipe_books/new">Create a new recipe book</a></p>
+	<% end %>
+<% else %>
+	<% if logged_in? && current_user.id == @user.id %>
+		<p>You don't have any recipe books. Click <a href="/recipe_books/new">here</a> to create one now!</p>
+	<% else %>
+		<%= erb :'/_404_error' %>
+	<% end %>
+<% end %>

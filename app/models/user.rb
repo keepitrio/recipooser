@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 	has_many :recipe_books
 	has_many :recipes, through: :recipe_books
 
-	validates :email, :username, :presence: true, uniqueness: true
+	validates :email, :username, presence: true, uniqueness: true
 
 	def password
 		@password ||= BCrypt::Password.new(hashed_password)
